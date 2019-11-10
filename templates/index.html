@@ -5,7 +5,7 @@
     <script type=text/javascript>
             $(function() {
               $('a#test').bind('click', function() {
-                $.getJSON('/background_process_test',
+                $.getJSON('/submit',
                     function(data) {
                   //do nothing
                 });
@@ -37,7 +37,9 @@
     <textarea id="userSecret" name="name" rows="8" cols="80"></textarea>
     <textarea id="accessPublic" name="name" rows="8" cols="80"></textarea>
     <textarea id="accessSecret" name="name" rows="8" cols="80"></textarea>
-    <br>
+    <form>
+      <a href="#" id="submit"><button class="btn btn-default">Submit Keys</button></a>
+    </form>
     <p id="userStatus">You are currently not signed in.</p>
     <p id="appStatus">You currently have no app connected.</p>
   </body>
