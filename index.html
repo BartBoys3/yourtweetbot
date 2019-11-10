@@ -2,17 +2,31 @@
 <html>
   <head>
     <style>
+      @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
       a, h1, h2, h3, h4, h5, h6, p, body, span, img, br, li, input {
-
+        font-family: "Ubuntu", sans-serif;
       }
     </style>
   </head>
   <body>
-
-    <h2>Step 1: Make a Bot</h2>
+    <h1></h1>
+    <br>
+    <h2>Step 1: Make a bot</h2>
     <p>Sadly, this step has to be done manually at <a href="https://developer.twitter.com/en/apps">https://developer.twitter.com/en/apps</a>.<br>
     Be sure to give the app a funny name to replace Twitter for iPhone or Twitter for Android!</p>
     <br>
-    <h2>Step 2: </h2>
+    <h2>Step 2: Enter your keys</h2>
+    <p>
+      Note:<br>
+      These keys are handled in a not at all secure manner.<br>
+      Don't trust me. I don't know what I'm doing.
+    </p>
+    <textarea id="userPublic" name="name" rows="8" cols="80"></textarea>
+    <textarea id="userSecret" name="name" rows="8" cols="80"></textarea>
+    <textarea id="accessPublic" name="name" rows="8" cols="80"></textarea>
+    <textarea id="accessSecret" name="name" rows="8" cols="80"></textarea>
+    <br>
+    <p id="userStatus">You are currently not signed in.</p>
+    <p id="appStatus">You currently have no app connected.</p>
   </body>
 </html>
