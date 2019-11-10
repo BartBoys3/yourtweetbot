@@ -4,7 +4,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script type=text/javascript>
             $(function() {
-              $('a#test').bind('click', function() {
+              $('a#submit').bind('click', function() {
                 $.getJSON('/submit',
                     function(data) {
                   //do nothing
@@ -21,26 +21,29 @@
     </style>
   </head>
   <body>
-    <h1></h1>
+    <h1>Your Tweet Bot</h1>
     <br>
     <h2>Step 1: Make a bot</h2>
     <p>Sadly, this step has to be done manually at <a href="https://developer.twitter.com/en/apps">https://developer.twitter.com/en/apps</a>.<br>
-    Be sure to give the app a funny name to replace Twitter for iPhone or Twitter for Android!</p>
+    Be sure to give the app a funny name to replace "Twitter for iPhone" or "Twitter for Android"!</p>
     <br>
-    <h2>Step 2: Enter your keys</h2>
+    <h2>Step 2: Enter your keys & go!</h2>
     <p>
       Note:<br>
       These keys are handled in a not at all secure manner.<br>
       Don't trust me. I don't know what I'm doing.
     </p>
-    <textarea id="userPublic" name="name" rows="8" cols="80"></textarea>
-    <textarea id="userSecret" name="name" rows="8" cols="80"></textarea>
-    <textarea id="accessPublic" name="name" rows="8" cols="80"></textarea>
-    <textarea id="accessSecret" name="name" rows="8" cols="80"></textarea>
-    <form>
-      <a href="#" id="submit"><button class="btn btn-default">Submit Keys</button></a>
+    <form action="/submit" method="post">
+      API Key: <input type="text" name="userPublic"><br>
+      API Secret: <input type="text" name="userSecret"><br>
+      Access Token: <input type="text" name="accessPublic"><br>
+      Access Token Secret: <input type="text" name="accessSecret"><br>
+      Message to send: <input type="text" name="msg"><br>
+      Check account info without tweeting: <input type="checkbox" name="toggle"><br>
+      <input type="submit" name="submitBtn" value="Submit">
     </form>
-    <p id="userStatus">You are currently not signed in.</p>
-    <p id="appStatus">You currently have no app connected.</p>
+    <div class="output">
+  {{text|safe}}
+  </div>
   </body>
 </html>
